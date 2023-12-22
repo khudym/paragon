@@ -26,6 +26,7 @@ import HipsterIpsum from './exampleComponents/HipsterIpsum';
 import ExamplePropsForm from './exampleComponents/ExamplePropsForm';
 
 const {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   Collapsible, Toast, IconButton, Icon,
 } = ParagonReact;
 
@@ -117,6 +118,7 @@ function CodeBlock({
 }: ICodeBlock) {
   const intl = useIntl();
   const language: any = className ? className.replace(/language-/, '') : 'jsx';
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showToast, setShowToast] = useState(false);
   const [codeExample, setCodeExample] = useState(children);
 
@@ -160,13 +162,10 @@ function CodeBlock({
           </CollapsibleLiveEditor>
           <LiveError className="pgn-doc__code-block-error" />
         </LiveProvider>
-        <Toast
-          onClose={() => setShowToast(false)}
-          show={showToast}
-          delay={2000}
-        >
+        {/* TODO: add implementation of new Toast */}
+        <mark>
           Code example copied to clipboard!
-        </Toast>
+        </mark>
       </div>
     );
   }

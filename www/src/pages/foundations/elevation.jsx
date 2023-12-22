@@ -5,7 +5,6 @@ import {
   Button,
   Form,
   Input,
-  Toast,
   Icon,
   IconButtonWithTooltip,
 } from '~paragon-react';
@@ -27,6 +26,7 @@ const controlsProps = [
 ];
 
 function BoxShadowNode() {
+  // eslint-disable-next-line no-unused-vars
   const [showToast, setShowToast] = useState(false);
 
   const isBoxShadowCopied = (level, side) => {
@@ -55,14 +55,10 @@ function BoxShadowNode() {
   return (
     <div className="pgn-doc__box-shadow-cells">
       { boxShadowCells }
-      <Toast
-        className="pgn-doc__box-shadow--toast"
-        onClose={() => setShowToast(false)}
-        show={showToast}
-        delay={2000}
-      >
+      {/* TODO: add implementation of new Toast */}
+      <mark className="pgn-doc__box-shadow--toast">
         Box-shadow copied to clipboard!
-      </Toast>
+      </mark>
     </div>
   );
 }

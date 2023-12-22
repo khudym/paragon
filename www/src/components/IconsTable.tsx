@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import debounce from 'lodash.debounce';
-import { Icon, SearchField, Toast } from '~paragon-react';
+import { Icon, SearchField } from '~paragon-react';
 import * as IconComponents from '~paragon-icons';
 
 const WINDOW_HEIGHT = 2400;
@@ -66,6 +66,7 @@ function IconsTable({ iconNames }) {
   const [tableWidth, setTableWidth] = useState(0);
   const [data, setData] = useState({ iconsList: iconNames, rowsCount: ROWS_PER_WINDOW });
   const [currentIcon, setCurrentIcon] = useState(iconNames[0]);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [showToast, setShowToast] = useState(false);
   const currentIconImport = `import { ${currentIcon} } from '@edx/paragon/icons';`;
   const { rowsCount, iconsList } = data;
@@ -177,13 +178,10 @@ function IconsTable({ iconNames }) {
       </div>
 
       <div ref={tableBottom} />
-      <Toast
-        onClose={() => setShowToast(false)}
-        show={showToast}
-        delay={2000}
-      >
+      {/* TODO: add implementation of new Toast */}
+      <mark>
         Copied to clipboard!
-      </Toast>
+      </mark>
     </>
   );
 }
